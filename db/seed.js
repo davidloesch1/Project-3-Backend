@@ -12,13 +12,13 @@ Images.deleteMany({}).then(() => {
     //CREATE A IMAGE FILE BELOW
     Images.create({
       title: "The love of my life",
-      photofile: "https://images-na.ssl-images-amazon.com/images/I/41nYEMfvoEL._SX352_BO1,204,203,200_.jpg",
-      genre: {cat: 'sky'},
+      photofile: " ",
+      genre: ['summer', 'fall', 'spring'],
       votes: 0
     }).then(pic1 => {
       Comments.create({
         title: "Picture looks good",
-        parent: {com: 'lookin'},
+        parent: {},
         photo: pic1.id,
         subcomments: pic1.comments
       }).then(com1 => {

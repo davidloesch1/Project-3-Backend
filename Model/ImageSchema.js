@@ -1,5 +1,6 @@
 const mongoose = require("../db/connection");
 
+
 const ImagesSchema = new mongoose.Schema({
   title: String,
   photoFile: { data: Buffer, contentType: String },
@@ -11,11 +12,8 @@ const ImagesSchema = new mongoose.Schema({
     }
   ],
   genre: [
-    {
-      Category: String
-      
-    }
-  ],
+    String
+  ]
  
 });
 
