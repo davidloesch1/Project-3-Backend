@@ -15,7 +15,7 @@ const ImagesSchema = new mongoose.Schema({
       
     }
   ],
-  votes: Number
+  votes: number
 });
 
 const Image = mongoose.model("Images", ImagesSchema);
