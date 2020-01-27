@@ -7,7 +7,7 @@ const CommentSchema = new mongoose.Schema({
       ref: "Images",
       type: mongoose.Schema.Types.ObjectId
     },
-  // ????????????????  
+ 
 parent: {},
 
   subcomments: [

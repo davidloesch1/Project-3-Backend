@@ -3,6 +3,7 @@ const mongoose = require("../db/connection");
 const ImagesSchema = new mongoose.Schema({
   title: String,
   photoFile: { data: Buffer, contentType: String },
+  votes: 0,
   comments: [
     {
       ref: "Comments",
@@ -15,7 +16,7 @@ const ImagesSchema = new mongoose.Schema({
       
     }
   ],
-  votes: number
+ 
 });
 
 const Image = mongoose.model("Images", ImagesSchema);
