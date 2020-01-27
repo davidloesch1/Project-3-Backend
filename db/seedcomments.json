@@ -1,14 +1,19 @@
 [{
         "title": "The big image",
-        "photo": "https://en.wikipedia.org/wiki/The_BFG#/media/File:The_BFG_(Dahl_novel_-_cover_art).jpg"
-
+        "photo": "has to be the file",
+        "genre": {},
+        "votes": 0 
     },
     {
         "title": "The big monster",
-        "photo": "https://images-na.ssl-images-amazon.com/images/I/41nYEMfvoEL._SX352_BO1,204,203,200_.jpg"
+        "photo": "has to be the file",
+        "genre": {},
+        "votes": 0 
     },
     {
-        "title": "The big story",
-        "photo": "https://images-na.ssl-images-amazon.com/images/I/41gdQTWQgEL._SX329_BO1,204,203,200_.jpg"
+        "title": "The big dog",
+        "photo": "has to be the file",
+        "genre": {},
+        "votes": 0 
     }
 ]

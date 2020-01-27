@@ -2,15 +2,23 @@ const mongoose = require("../db/connection");
 
 const CommentSchema = new mongoose.Schema({
   title: String,
-  photo: { data: Buffer, contentType: String },
+  photo: 
+    {
+      ref: "Images",
+      type: mongoose.Schema.Types.ObjectId
+    },
+  // ????????????????  
+parent: {},
+
   subcomments: [
     {
-      ref: "Image",
+      ref: "Comments",
       type: mongoose.Schema.Types.ObjectId
     }
   ]
+
 });
 
-const Comments = mongoose.model("Photos", CommentSchema);
+const Comment = mongoose.model("Comments", CommentSchema);
 
-module.exports = Comments;
+module.exports = Comment;

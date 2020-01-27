@@ -6,6 +6,8 @@ const app = express();
 //port number to listen
 const PORT = 8080;
 
+//start listening to routes in the controller folder fbelow. 
+
 
 //listen on port 8080
 app.listen(PORT, () => {

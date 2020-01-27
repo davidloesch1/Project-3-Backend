@@ -12,11 +12,12 @@ const ImagesSchema = new mongoose.Schema({
   genre: [
     {
       Category: String
+      
     }
   ],
   votes: Number
 });
 
-const Images = mongoose.model("Images", ImagesSchema);
+const Image = mongoose.model("Images", ImagesSchema);
 
-module.exports = Images;
+module.exports = Image;
