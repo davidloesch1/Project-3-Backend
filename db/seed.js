@@ -13,7 +13,7 @@ Images.deleteMany({}).then(() => {
     Images.create({
       title: "The love of my life",
       photofile: " ",
-      genre: ['summer', 'fall', 'spring'],
+      genre: ['summer', 'fall', 'spring', 'winter'],
       votes: 0
     }).then(pic1 => {
       Comments.create({
