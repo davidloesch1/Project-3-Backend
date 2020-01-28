@@ -18,6 +18,7 @@
   "homepage": "https://github.com/davidloesch1/Project-3-Backend#readme",
   "dependencies": {
     "chai": "^4.2.0",
+    "config": "^3.2.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mocha": "^7.0.1",

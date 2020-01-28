@@ -1,5 +1,5 @@
 //connects to db
-const mongoose = require("./connection");
+//const mongoose = require("./config");
 
 //connects to the Models folder to grab the schema to mongodb
 const Comments = require("../Model/CommentsSchema");
@@ -12,8 +12,8 @@ Images.deleteMany({}).then(() => {
     //CREATE A IMAGE FILE BELOW
     Images.create({
       title: "The love of my life",
-      photofile: " ",
-      genre: ['summer', 'fall', 'spring', 'winter'],
+      path: " ",
+      genre: ["summer", "fall", "spring", "winter"],
       votes: 0
     }).then(pic1 => {
       Comments.create({

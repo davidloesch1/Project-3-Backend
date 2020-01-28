@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://photoapp:photoapp123@photoapp-eefkg.mongodb.net/test?retryWrites=true&w=majority"
+}

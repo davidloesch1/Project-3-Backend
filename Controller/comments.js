@@ -14,6 +14,7 @@ router.post("/", (req, res) => {
   let newComment = req.body;
   console.log(newComment);
 
-  Comment.create(req.body).then(comments => res.json(comments));
+  Comments.create(req.body).then(comments => res.json(comments));
 });
 
+module.exports = router; 
