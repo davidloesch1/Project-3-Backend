@@ -1,28 +1,4 @@
-//const Image = require('../Model/ImageSchema');
 
-// exports.index = function(req, res) {
-// Image.find({}, function ( e, image) {
-//     if(e) res.send(e)
-//     res.json(image)
-// })
-// }
-
-// exports.show = function(req, res) {
-
-// }
-
-// exports.create = function(req, res) {
-
-// }
-
-// exports.update = function(req, res) {
-
-// }
-
-// exports.destroy = function(req, res) {
-
-// }
-// ******************************************************************
 
 const express = require("express");
 const router = express.Router();
@@ -56,16 +32,40 @@ const uploadV = multer({
   //size of picture
   limits: { fileSize: 1000000 },
   fileFilter: function(req, file, cb) {
-
+checkFileType(file, cb);
   }
-})
+}).single("myImage");
+
+
+//check file type
+function checkFileType(file, cb) {
+  //allowed ext
+  const filetypes = /jpeg|jpg|png|gif/;
+  //check ext
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  //check mime
+  const mimetype = filetypes.test(file.mimetype);
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  } else {
+    cb("Error: Images Only!");
+  }
+}
+
+
+
 
 // router.post('/', upload.single('pic'),(req, res, next) => {
-router.post("/", upload.single("pic"), (req, res, next) => {
-  console.log(req.file);
+router.post("/upload", (req, res) => {
+  uploadV( req, res, err => {
+    res.json({
+      file: `uploads/${req.file.filename}`
+    });
+  });
+  
 
-  User.create(req.body).then(user => res.json(user));
-});
+  
 
 // router.get("/", (req, res) => {
 //   Image.find({}).then(images => res.json(images));
@@ -109,5 +109,5 @@ router.post("/", upload.single("pic"), (req, res, next) => {
 // router.delete("/:title", (req, res) => {
 //     Image.findOneAndDelete({title: req.params.title}).then(image =>
 //         res.json(image))
-// })
+})
 module.exports = router;
