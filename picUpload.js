@@ -1,4 +1,7 @@
-// module.exports = function(app) {
+
+
+
+// //module.exports = function(app) {
 //     const cors = require('cors')
 
 //     const pOptions = {
@@ -9,4 +12,9 @@
 //     }
 
 //     app.use('/public', cors(pOptions))
-// }
+
+// //}
+
+
+// module.exports = app;
+

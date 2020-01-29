@@ -1,9 +1,11 @@
 const mongoose = require("../db/connection");
 
-
 const ImagesSchema = new mongoose.Schema({
   title: String,
-  path: { String },
+  path: {
+    type: String,
+    required: true
+  },
   votes: 0,
   comments: [
     {
@@ -11,10 +13,7 @@ const ImagesSchema = new mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId
     }
   ],
-  genre: [
-    String
-  ]
- 
+  genre: [String]
 });
 
 const Image = mongoose.model("Images", ImagesSchema);
