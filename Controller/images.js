@@ -28,6 +28,9 @@
 
 const express = require("express");
 const router = express.Router();
+const multer = require('multer')
+const upload = multer({dest: '..
+uploads/'})
 
 const Image = require("../Model/ImageSchema");
 
@@ -35,9 +38,11 @@ router.get("/", (req, res) => {
     Image.find({}).then(images => res.json(images));
 });
 
-router.post("/", (req, res) => {
-    Image.create(req.body)
-    .then(newImage => res.json(newImage));
+router.post("/", upload.single('photo'),(req, res, next) => {
+    console.log(req.body)
+    console.log(req.file)
+    // Image.create(req.body)
+    // .then(newImage => res.json(newImage));
 });
 
 router.put("/:title", (req, res) => {
