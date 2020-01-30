@@ -22,17 +22,17 @@ router.post("/", (req, res) => {
 
 //not working
 //must connect the two ids on both schemas.
-router.post("/new", (req, res) => {
-  Image.create(req.body.image).then(img => {
-    Comments.create(req.body.comment).then(com => {
-      img.comments.push(Comments._id);
-      com.subcomments.push(Images._id);
-      img.save();
-      com.save();
-      res.json(img);
-    });
-  });
-});
+// router.post("/new", (req, res) => {
+//   Image.create(req.body.image).then(img => {
+//     Comments.create(req.body.comment).then(com => {
+//       img.comment.push(Comments._id);
+//       com.image.push(Images._id);
+//       img.save();
+//       com.save();
+//       res.json(img);
+//     });
+//   });
+// });
 
 //works
 router.delete("/:id", (req, res) => {
