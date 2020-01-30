@@ -44,35 +44,18 @@ router.get("/", (req, res, next) => {
 router.get("/:id", (req, res, next) => {
   let id = req.params.id;
   Image.findById(id)
-    .then(image => {
-      console.log("from database", image);
-      if (image) {
-        res.status(200).json({
-          image: image,
-          request: {
-            type: "GET",
-            url: "http://localhost:8080/api/images"
-          }
-        });
-      } else {
-        res;
-      }
-    });
+    .then(image => res.json(image));
 });
 
 router.post("/", upload.single("path"), (req, res, next) => {
-  console.log(req.file);
-  console.log(req.body);
-  Image.create(
-    new Image({
-     
-      title: req.body.title,
-      genre: req.body.genre,
-      path: req.file.path,
-      votes: 0
-    })
-  ).then(entry => res.json(entry));
-
+  console.log(req.file)
+  console.log(req.body)
+    Image.create(new Image({
+    title: req.body.title,
+    genre: req.body.genre,
+    path: req.file.path,
+    votes: 0
+  })).then(entry => res.json(entry));
 });
 
 //works
