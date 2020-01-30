@@ -38,7 +38,7 @@ router.get("/", (req, res, next) => {
     .select("title genre path _id")
     .exec()
     .then(images => {
-      const res = {
+     const res = {
         count: images.length,
         images: images.map(img => {
           return {
@@ -50,11 +50,17 @@ router.get("/", (req, res, next) => {
               type: "GET",
               url: "http://localhost:8080/api/images" + img._id
             }
+           
           };
+        
         })
+        
       };
+      
     });
+   
 });
+
 
 router.get("/:id", (req, res, next) => {
   let id = req.params.id;
@@ -98,11 +104,11 @@ router.post("/", upload.single("path"), (req, res, next) => {
   //   console.log(image);
 });
 
-//many not work
+//works
 router.delete("/:id", (req, res) => {
   let id = req.params.id;
   Image.findById(id)
-    .select("title genre path _id")
+  .select("title genre path _id")
     .exec()
     .then(d => {
       console.log("id states: ", d);
@@ -120,7 +126,7 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-//update pic / may not working. 
+//works 
 router.put("/:picId", (req, res) => {
   let updatePic = req.body;
   let picId = req.params._id;
