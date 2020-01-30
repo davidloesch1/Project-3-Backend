@@ -12,7 +12,7 @@ parent: {},
 
   subcomments: [
     {
-      ref: "Comments",
+      ref: "Images",
       type: mongoose.Schema.Types.ObjectId
     }
   ]

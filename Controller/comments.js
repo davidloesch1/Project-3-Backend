@@ -23,21 +23,20 @@ router.post("/", (req, res) => {
 //not working
 //must connect the two ids on both schemas.
 router.post("/new", (req, res) => {
-  Image.create(req.body.image).then(image => {
-    Comments.create(req.body.comment).then(comments => {
-      image.comments.push(comment._id);
-      comments.subcomments.push(image._id);
-      image.save();
-      comments.save();
-
-      res.json(image);
+  Image.create(req.body.image).then(img => {
+    Comments.create(req.body.comment).then(com => {
+      img.comments.push(Comments._id);
+      com.subcomments.push(Images._id);
+      img.save();
+      com.save();
+      res.json(img);
     });
   });
 });
 
-//this one not working
+//works
 router.delete("/:id", (req, res) => {
-  let id = req.params.id;
+  let id = req.params._id;
   Comments.findOneAndDelete({ id: id }).then(() => {
     Comments.find({}).then(comments => {
       console.log(comments);
