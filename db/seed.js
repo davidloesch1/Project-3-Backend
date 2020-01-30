@@ -1,4 +1,4 @@
-// //connects to db
+//connects to db
 // //const mongoose = require("./config");
 
 // //connects to the Models folder to grab the schema to mongodb
