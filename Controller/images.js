@@ -30,24 +30,10 @@ const Image = require("../Model/ImageSchema");
 
 router.get("/", (req, res, next) => {
   Image.find()
-  .select("title genre path _id")
+  .select("title genre path _id votes comments")
   .exec()
   .then(images => {
-    const res = {
-        count: images.length,
-        images: images.map(img => {
-            return {
-                title: img.title,
-                genre: img.genre,
-                votes: img.votes,
-                _id: img._id,
-                request: {
-                    type: "GET",
-                    url: "http://localhost:8080/api/images" + img._id
-                }
-            }
-        })
-    }
+    res.json(images)
   })
 });
 
