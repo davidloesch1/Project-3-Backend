@@ -35,23 +35,30 @@ describe("GET /api/comment", () => {
           });
       });
 
-
-    //   describe("POST /api/comment", function() {
-    //     before(function(done) {
-    //       api
-    //         .post("/api/comment")
-    //         .set("Accept", "application/json")
-    //         .send({
-    //           title: "Make",
-    //           genre: "winter",
-    //           path: "",
+//works for the posting code for images - pass
+      describe("POST /api/images", function() {
+        before(function(done) {
+          api
+            .post("/api/images")
+            .set("Accept", "application/json")
+            .send({
+              title: "Make",
+              genre: "winter",
+              path: "",
              
-    //         })
-    //         .end(done);
-    //     });
-    //});
-
-
-
+            })
+            .end(done);
+        });
+    
+        it("should return an object for images", function(done) {
+            api
+              .get("/api/images")
+              .set("Accept", "application/json")
+              .end(function(error, response) {
+                expect(response.body.length).to.greaterThan(1);
+              });
+              done();
+          });
+        });
 })
 
