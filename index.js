@@ -32,7 +32,18 @@ const imagesController = require("./Controller/images");
 app.use("/api/comment/", commentController);
 app.use("/api/images/", imagesController);
 
-//listen on port 8080
-app.listen(PORT, () => {
-  console.log("they see me rollin on port 8080...");
+
+app.set("port", process.env.PORT || 8080);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
 });
+
+
+
+
+
+//listen on port 8080
+// app.listen(PORT, () => {
+//   console.log("they see me rollin on port 8080...");
+// });
