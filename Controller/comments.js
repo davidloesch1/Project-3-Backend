@@ -13,11 +13,17 @@ router.get("/", (req, res) => {
 
 //this works
 router.post("/", (req, res) => {
-  let newComment = req.body;
-  console.log(newComment);
-  Comments.create(newComment).then(
-    Comments.find({}).then(comments => res.json(comments))
+  Image.findById(req.body.photo).then(image => {
+      Comments.create(req.body).then(comment => {
+        image.comments.push(comment._id)
+        comment.photo = image._id
+        image.save()
+        comment.save()
+        res.json(image)
+      }
   );
+  })
+
 });
 
 //not working
