@@ -6,7 +6,7 @@ const app = express();
 
 //import the route code below
 //const bupload = require("./binaryUpload");
-app.use(express.static("uploads"))
+app.use("/uploads/", express.static("uploads"))
 app.use(parser.urlencoded({ extended: true }));
 app.use(parser.json());
 app.use(cors());
