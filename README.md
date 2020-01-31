@@ -1,18 +1,10 @@
-# Project-3-Backend
 
-test backend
-dean's test
 
-# Start Files Included
-
-Added the following folders:
-Controller, db, Model, and index.js file to root in Backend file
-
-#Project Overview
-#Project Description
+# Project Overview - Backend
+# Project Description
 The project we have chosen is a Photo Sharing app with two components (vote up button and comments button). The main feature is our picture on upload to each particular card. We are the new Instagram.
 
-#Technologies Used:
+# Technologies Used:
 The technologies we used were as followed:
 
 1. Mongdb
@@ -23,7 +15,7 @@ The technologies we used were as followed:
 6. Git
 7. Github
 
-#Process of Development
+# Process of Development
 The approach we used were to separate the backend to the frontend and starting developing separatly each of the files. Also, were to add some testing to our code.
 
 1. first step was to get our connection to the port 8080 after we imported all of our dependencies within Express.js.
