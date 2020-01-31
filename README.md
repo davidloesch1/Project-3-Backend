@@ -22,5 +22,36 @@ The approach we used were to separate the backend to the frontend and starting d
 2. making our connection using mongoose to our localhost db.
 3. we created our two schema utilizing our pre-planning worksheet within our planning folders.
 4. after setting up our schemas we were able to create our routes within the controllers folder based upon the schema (key : values pairs) we chose.
-5. we added our routes files into the index.js file to see if you can access any uploads.
-6.
+5. We added our access route files into the index.js file to see if you can access any uploads.
+6. In order to access files from #5 we used postman to test uploads, delete, findbyId, post, get, get by title, etc
+7. next, we tested some of the routes on backend within test folder.  
+8. We configured the heroku links to add to our site within the config folder. 
+9. we consistently tested our uploads images folder with pictures. 
+10. deployed site to heroku.  
+
+
+![picture](/images/rd.png)
+
+# Features 
+
+We created a simple backend server with two schemas and a few routes that would give us and MVP of our photo sharing app. All of it worked like a charm. The following is a list of features:
+
+1. Comments fill in section / connected to schema
+2. genre section for multiple pick using array on schema
+3. Up tick btn with ability of user to give the picture an up vote to move it up. 
+
+# Installation Instructions
+
+The installation of photo sharing app to heroku, we followed the 18 step process from within github and it deployed with no problems.  
+
+Link: https://git.generalassemb.ly/seir-1118/heroku-atlas-deployment
+
+
+
+# Unsolved Problems 
+
+I issue was the post comments section code with connecting both image and comments components.  We could not get it to work correctly.  We may have some of the words switched around.  We debugged several hours on it. 
+
+
+
+
