@@ -14,6 +14,7 @@ The technologies we used were as followed:
 5. Heroku cluster (deployed server api)
 6. Git
 7. Github
+8. Testing:  Supertest, chai, mocha
 
 # Process of Development
 The approach we used were to separate the backend to the frontend and starting developing separatly each of the files. Also, were to add some testing to our code.
@@ -24,13 +25,14 @@ The approach we used were to separate the backend to the frontend and starting d
 4. after setting up our schemas we were able to create our routes within the controllers folder based upon the schema (key : values pairs) we chose.
 5. We added our access route files into the index.js file to see if you can access any uploads.
 6. In order to access files from #5 we used postman to test uploads, delete, findbyId, post, get, get by title, etc
-7. next, we tested some of the routes on backend within test folder.  
+7. next, we tested some of the routes on backend within test folder. we used the following to test (mocha, supertest, chai)  
 8. We configured the heroku links to add to our site within the config folder. 
 9. we consistently tested our uploads images folder with pictures. 
 10. deployed site to heroku.  
 
 
 ![picture](/images/rd.png)
+![picture](/images/rd2.png)
 
 # Features 
 
@@ -52,6 +54,11 @@ Link: https://git.generalassemb.ly/seir-1118/heroku-atlas-deployment
 
 I issue was the post comments section code with connecting both image and comments components.  We could not get it to work correctly.  We may have some of the words switched around.  We debugged several hours on it. 
 
+![picture](/images/rd3.png)
 
+# Outside Resources utilized
 
+Git: https://git.generalassemb.ly/seir-1118/heroku-atlas-deployment
+Youtube: https://www.youtube.com/watch?v=srPXMt1Q0nY
+Site: https://daveceddia.com/deploy-react-express-app-heroku/
 
